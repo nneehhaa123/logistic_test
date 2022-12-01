@@ -41,10 +41,9 @@ loaded_model = load(open('Logistic_Model.sav', 'rb'))
 prediction = loaded_model.predict(df)
 prediction_proba = loaded_model.predict_proba(df)
 
-st.subheader('Predicted Result')
-st.write('Yes' if prediction_proba[0][1] > 0.5 else 'No')
-
-st.subheader('Prediction Probability')
-st.write(prediction_proba)
+if st.button('Predict claim reimbursment'):
+    st.subheader('Predicted Result')
+    st.success('Yes' if prediction_proba[0][1] > 0.5 else 'No')
+    
 
 
