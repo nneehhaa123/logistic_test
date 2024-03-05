@@ -18,5 +18,6 @@ refactor: format lint
 
 deploy:
 	#deploy goes here
+	streamlit run prediction/app.py
 		
 all: install lint test format deploy
