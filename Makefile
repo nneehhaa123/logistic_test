@@ -18,6 +18,9 @@ refactor: format lint
 
 deploy:
 	#deploy goes here
-	streamlit run prediction/app.py
+	#streamlit run prediction/app.py
+	docker build -t insurnce_tool .
+	docker run -p 8501:8501 insurnce_tool
+
 		
 all: install lint test format deploy
