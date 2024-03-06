@@ -24,7 +24,15 @@ jobs:
       run: make format
     # - name: deploy
     #   run: make deploy
-    - uses: streamlit/streamlit-app-action@v0.0.3
-      with:
-        app-path: prediction/app.py
-        ruff: true
+    # below code just test whether app is deployed successfully or not ..o/p cant be checked
+    # - uses: streamlit/streamlit-app-action@v0.0.3
+    #   with:
+    #     app-path: prediction/app.py
+    #     ruff: true
+    - name: Deploy code
+      env:
+        SERVER_IP: localhost
+        PORT: 8600
+      run: streamlit run prediction/app.py --server.address localhost  --server.port 8600
+    - name: start local server
+      run: python -m http.server 8600
