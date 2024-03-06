@@ -22,5 +22,9 @@ jobs:
       run: make test
     - name: format
       run: make format
-    - name: deploy
-      run: make deploy
+    # - name: deploy
+    #   run: make deploy
+    - uses: streamlit/streamlit-app-action@v0.0.3
+      with:
+        app-path: prediction/app.py
+         ruff: true
