@@ -20,7 +20,7 @@ deploy:
 	#deploy goes here
 	#streamlit run prediction/app.py
 	docker build -t insurnce_tool .
-	docker run -p 8501:8501 insurnce_tool
+	docker run -p 8600:8600 insurnce_tool
 
 evaluation:
 	python Development/Model_eval.py
