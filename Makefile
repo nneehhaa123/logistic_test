@@ -3,7 +3,7 @@ install:
 		pip install -r requirements.txt
 
 test:
-	python -m pytest -vv --cov=. --cov-report=lcov */*.py
+	python -m pytest -vv --cov=. */*.py
 
 format:	
 	black */*.py 
