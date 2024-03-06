@@ -22,5 +22,7 @@ deploy:
 	docker build -t insurnce_tool .
 	docker run -p 8501:8501 insurnce_tool
 
+evaluation:
+	python Development/Model_eval.py
 		
 all: install lint test format deploy

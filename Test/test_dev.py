@@ -20,3 +20,4 @@ def test_predict(model):
     prediction = model.predict(df)
     print(prediction)
     assert prediction ==1
+

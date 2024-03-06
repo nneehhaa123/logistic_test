@@ -22,13 +22,15 @@ jobs:
       run: make test
     - name: format
       run: make format
-    # - name: deploy
-    #   run: make deploy
+    - name: Model Evaluation
+      run: make evaluation
     # below code just test whether app is deployed successfully or not ..o/p cant be checked
     - uses: streamlit/streamlit-app-action@v0.0.3
       with:
         app-path: prediction/app.py
         ruff: true
+    - name: deploy
+      run: make deploy
     # - name: Deploy code
     #   env:
     #     SERVER_IP: localhost
